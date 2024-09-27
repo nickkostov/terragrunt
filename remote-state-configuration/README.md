@@ -1,3 +1,5 @@
+# No terragrunt, it is vanilla terraform here
+
 # How to create the remote state in GCP:
 
 Prerequisites: 
