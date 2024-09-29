@@ -13,10 +13,13 @@ variable "firewall_rule" {
     priority    = optional(number)
     description = optional(string)
     direction   = optional(string)
-# Finish the variable Declaration
+    source_ranges = optional(list(string))
+    source_service_accounts = optional(list(string))
+    target_service_accounts = optional(list(string))
+    target_tags  = optional(list(string))
     allow = optional(list(object({
       protocol = optional(string)
-      ports    = optional(list(number))
+      ports    = optional(list(string))
     })))
     source_tags = optional(list(string))
   }))

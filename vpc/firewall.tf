@@ -1,6 +1,6 @@
 resource "google_compute_firewall" "this" {
   for_each = var.firewall_rule
-  name    = format("%s-firewall-rules", each.value.name)
+  name    = format("%s-firewall-rules-%s", each.value.name, var.config.project)
   direction = each.value.direction
   network = google_compute_network.this.name
   priority = each.value.priority
@@ -19,6 +19,4 @@ resource "google_compute_firewall" "this" {
   }
   source_tags = each.value.source_tags
 
-}
-  #var.config.project)
-#  
+} 
